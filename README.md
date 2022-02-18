@@ -349,3 +349,56 @@ namespace ex10<br>
 }<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154631764-8376067d-b911-4d81-9600-94c94ab3baee.png)
+
+**9 C# program to benchmark 2D,Jagged array allocation**<br>
+using System;<br>
+using System.Diagnostics;<br>
+namespace ex11<br>
+{<br>
+    class BenchmarkAllocation<br>
+    {<br>
+        const int _max= 100000;<br>
+        static void Main(string[] args)<br>
+        {<br>
+            var Arr2D = new int[100, 100];<br>
+            var ArrJagged = new int[100][];<br>
+            for(int i = 0;i < 100;i++)<br>
+            {<br>
+                ArrJagged[i] = new int[100];<br>
+            }<br>
+            var Stopwatch2D = Stopwatch.StartNew();<br>
+            for(int i=0;i<_max;i++)<br>
+            {<br>
+                for (int j = 0; j<100; j++)<br>
+                {<br>
+                    for (int k = 0;  k<100;k++)<br>
+                    {<br>
+                        Arr2D[j, k] = k;<br>
+                    }<br>
+                }<br>
+            }<br>
+            Stopwatch2D.Stop();<br>
+            var StopwatchJagged = Stopwatch.StartNew();<br>
+            for(int i=0;i<_max;i++)<br>
+          {<br>
+
+   for (int j = 0; j < 100; j++)<br>
+                {<br>
+                    for (int k = 0; k < 100; k++)<br>
+                    {<br>
+                        ArrJagged[j][k] = k;<br>
+                    }<br>
+                }<br>
+            }<br>
+            StopwatchJagged.Stop();<br>
+            Console.WriteLine("\n time taken for allocation in case of 2D array: ");<br>
+            Console.WriteLine(Stopwatch2D.Elapsed.TotalMilliseconds+"miliseconds");<br>
+            Console.WriteLine("\n Time taken for allocation in case of jagged array: ");<br>
+            Console.WriteLine(StopwatchJagged.Elapsed.TotalMilliseconds + "miliseconds");<br>
+        }<br>
+
+   }<br>
+}<br>
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154632673-45f0f879-5bfd-47fe-9723-0f9075cb4543.png)
+
