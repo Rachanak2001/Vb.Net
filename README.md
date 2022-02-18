@@ -290,4 +290,33 @@ namespace ex8<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154629823-19042002-29d9-48e0-b7b6-25d620c9ef5a.png)
 
+**7 C# program to generate Rigister number automatically for 100 student using static Constructor**<br>
+using System;<br>
+namespace ex9<br>
+{<br>
+    class RegisterNum<br>
+    {<br>
+        int regNO;<br>
+        static int startNum;<br>
+        static RegisterNum()<br>
+        {<br>
+            startNum=20210000;<br>
+        }<br>
+        RegisterNum()<br>
+        {<br>
+            regNO = ++startNum;<br>
+        }<br>
+        public static void Main(string[] args)<br>
+        {<br>
+            for(int i=0;i<100;i++)<br>
+            {<br>
+                RegisterNum Student = new RegisterNum();<br>
+                Console.WriteLine("Student {0}:{1}",i+1,Student.regNO);<br>
+            }<br>
+        }<br>
+    }<br>
+}<br>
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154630837-497cda04-9cc8-475c-806f-66163dcc091b.png)
+![image](https://user-images.githubusercontent.com/97940850/154631120-f7e8f60d-bd41-4964-a573-558c35734e4a.png)
 
