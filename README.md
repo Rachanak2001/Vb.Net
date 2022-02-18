@@ -617,3 +617,98 @@ namespace ex17
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154637579-23b8dacf-5de8-4679-a073-abcda81202d8.png)
 
+**14 **<br>
+using System;
+using System.Threading;
+
+namespace ex18
+{
+    class ThreadPoolProg
+    {
+        public void ThreadFun1(object obj)
+        {
+            int loop = 0;
+            for (loop = 0; loop <= 4; loop++)
+            {
+                Console.WriteLine("Thread1 is executing");
+
+  }
+        }
+        public void ThreadFun2(object obj)
+        {
+            int loop = 0;
+            for (loop = 0; loop <= 4; loop++)
+            {
+                Console.WriteLine("Thread2 is executing");
+
+   }
+        }
+        public static void Main()
+        {
+            ThreadPoolProg TP = new ThreadPoolProg();
+            for(int i=0;i<2;i++)
+            {
+                ThreadPool.QueueUserWorkItem(new WaitCallback(TP.ThreadFun1));
+                ThreadPool.QueueUserWorkItem(new WaitCallback(TP.ThreadFun2));
+
+   }
+            Console.ReadKey();
+        
+   }
+    }
+}
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154637919-1c05db93-56bd-4188-9f6e-741e0ad7d1fe.png)
+
+**15 **<br>
+using System;
+
+namespace ex19
+{
+    class ExceptionHandling
+    {
+        static void Main(string[] args)
+        {
+            Age a = new Age();
+            try
+            {
+                a.displayAge();
+            }
+            catch(AgeIsNegativeException e)
+            {
+                Console.WriteLine("AgeIsNegativeException:{0}", e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Execution of finally block is done");
+            }
+            
+        }
+    }
+}
+public class AgeIsNegativeException:Exception
+{
+    public AgeIsNegativeException(string message):base(message)
+    {
+
+    }
+}
+public class Age
+{
+    int age = -5;
+    public void displayAge()
+    {
+        if(age<0)
+        {
+            throw (new AgeIsNegativeException("age cannot be negative"));
+        }
+        else
+        {
+            Console.WriteLine("age is:{0}", age);
+        }
+    }
+}
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154638151-631c25eb-770d-43a1-bfd8-12dbd098c717.png)
+
+
