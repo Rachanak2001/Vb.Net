@@ -556,3 +556,64 @@ namespace ex14
 ![image](https://user-images.githubusercontent.com/97940850/154634783-c273d4c6-77eb-4198-8251-b2f70cf8fee4.png)
 ![image](https://user-images.githubusercontent.com/97940850/154634965-84d7a2e7-dc2a-4348-877c-90cb2e225948.png)
 
+**13. **<br>
+using System;
+namespace ex17
+{
+    class Fraction : IComparable
+    {
+        int z, n;
+        public Fraction(int z, int n)
+        {
+            this.z = z;
+            this.n = n;
+        }
+        public static Fraction operator +(Fraction a, Fraction b)
+        {
+            return new Fraction(a.z * b.n + a.n * b.z, a.n * b.n);
+        }
+        public static Fraction operator *(Fraction a, Fraction b)
+        {
+            return new Fraction(a.z * b.z, a.n * b.n);
+        }
+        public int CompareTo(object obj)
+        {
+            Fraction f = (Fraction)obj;
+            if ((float)z / n < (float)f.z / f.n)
+                return -1;
+            else if ((float)z / n > (float)f.z / f.n)
+                return 1;
+            else
+                return 0;
+        }
+        public override string ToString()
+        {
+            return z + "/" + n;
+        }
+    }
+    class ICompInterface
+    {
+        public static void Main()
+        {
+
+   Fraction[] a = {
+ new Fraction(5,2),
+ new Fraction(29,6),
+ new Fraction(4,5),
+ new Fraction(10,8),
+ new Fraction(34,7)
+ };
+            Array.Sort(a);
+            Console.WriteLine("Implementing the IComparable Interface in " + "Displaying Fractions: ");
+            foreach (Fraction f in a)
+            {
+                Console.WriteLine(f + " ");
+            }
+            Console.WriteLine();
+            Console.ReadLine();
+        }
+    }
+}
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154637579-23b8dacf-5de8-4679-a073-abcda81202d8.png)
+
