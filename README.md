@@ -423,3 +423,48 @@ namespace ex11<br>
 
 
 ![image](https://user-images.githubusercontent.com/97940850/154633617-d4c0cfbd-1716-4701-a7c4-dcb4baffae82.png)
+
+
+**12. C# Program to Create a file check the existence of a file and read the content of the file**
+using System;
+using System.IO;
+
+namespace ex14
+{
+    class FileRead
+    {
+        public static void Main()
+        {
+            string file1;
+            string file2;
+            Console.Write("enter the first file path: ");
+            file1 = Console.ReadLine();
+            Console.Write("enter the second file path: ");
+            file2 = Console.ReadLine();
+            if(!File.Exists(file1))
+            {
+                Console.WriteLine("First file does not exist!");
+            }
+           else if (!File.Exists(file2))
+            {
+                Console.WriteLine("Second file does not exist!");
+            }
+            else if(File.ReadAllText(file1)==File.ReadAllText(file2))
+            {
+                Console.WriteLine("Both file contain the same content");
+            }
+            else
+            {
+                Console.WriteLine("Content of file are not same");
+            }
+            
+   }
+   }
+}
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154635067-d805cd9c-76c0-42c2-bff2-32fb27cb6394.png)
+![image](https://user-images.githubusercontent.com/97940850/154635125-b41c4a15-cb33-431a-826c-8e526ba2ca91.png)
+![image](https://user-images.githubusercontent.com/97940850/154635349-c83e6091-8b72-4f2a-b962-100547c613bd.png)
+![image](https://user-images.githubusercontent.com/97940850/154634783-c273d4c6-77eb-4198-8251-b2f70cf8fee4.png)
+![image](https://user-images.githubusercontent.com/97940850/154634965-84d7a2e7-dc2a-4348-877c-90cb2e225948.png)
+
