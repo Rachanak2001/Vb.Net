@@ -402,3 +402,24 @@ namespace ex11<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154632673-45f0f879-5bfd-47fe-9723-0f9075cb4543.png)
 
+**10 C# program to find the sum of the values in diagonal of the matrix**<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/97940850/154633617-d4c0cfbd-1716-4701-a7c4-dcb4baffae82.png)
