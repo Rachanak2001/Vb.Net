@@ -250,4 +250,44 @@ namespace ex6<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154629037-e5ce95da-8ea2-43b8-8adb-a954ce89e3c8.png)
 
+**6 C# Program to implement principles of Delegate converting input string to uppercase first,last and entire string**<br>
+using System;<br>
+namespace ex8<br>
+{<br>
+    class Delegates<br>
+    {<br>
+        delegate string UppercaseDelegate(string input);<br>
+        static string UppercaseFirst(string input)<br>
+        {<br>
+            char[] buffer = input.ToCharArray();<br>
+            buffer[0]=char.ToUpper(buffer[0]);<br>
+            return new string (buffer);<br>
+        }<br>
+        static string UppercaseLast(string input)<br>
+        {<br>
+            char[] buffer = input.ToCharArray();<br>
+            buffer[buffer.Length-1] = char.ToUpper(buffer[buffer.Length-1]);<br>
+            return new string(buffer);<br>
+        }<br>
+        static string UppercaseAll(string input)<br>
+        {<br>
+            return input.ToUpper();<br>
+        }<br>
+        static void WriteOutput(string input,UppercaseDelegate del)<br>
+        {<br>
+            Console.WriteLine("Input String:{0}",input);<br>
+            Console.WriteLine("Output String:{0}", del(input));<br>
+        }<br>
+        static void Main()<br>
+        {<br>
+            WriteOutput("tom", new UppercaseDelegate(UppercaseFirst));<br>
+            WriteOutput("tom", new UppercaseDelegate(UppercaseLast));<br>
+            WriteOutput("tom", new UppercaseDelegate(UppercaseAll));<br>
+            Console.ReadLine();<br>
+        }<br>
+    }<br>
+}<br>
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154629823-19042002-29d9-48e0-b7b6-25d620c9ef5a.png)
+
 
