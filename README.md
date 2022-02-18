@@ -1,4 +1,4 @@
-**C# program to find a Binary Triangle**<br>
+**1 C# program to find a Binary Triangle**<br>
 using System;<br>
 
 namespace  Ex1<br>
@@ -28,12 +28,13 @@ namespace  Ex1<br>
 }<br>
 
 **OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154625384-e7e3aaf3-a8ea-4f9d-b5c4-e532eb1be5a6.png)
 
 
 
 
 
-**AMICABLE NUMBER**<br>
+**2 C# program to check whether the entered number is an AMICABLE NUMBER or not**<br>
 using System;<br>
 
 namespace ex4<br>
@@ -79,6 +80,108 @@ namespace ex4<br>
 ![image](https://user-images.githubusercontent.com/97940850/154425457-4d3bc1d3-a81d-4081-9b7d-4f8957e5ea39.png)
 
 
+**3 C# Program to Illustrate multilevel iinheritance with virtual methods(displaying student details**<br>
+using System;<br>
+namespace ex7<br>
+{<br>
+    class PersonalDetails<br>
+    {<br>
+        string name;<br>
+        int age;<br>
+        string gender;<br>
+        public PersonalDetails(string name, int age, string gender)<br>
+        {<br>
+            this.name = name;<br>
+            this.age = age;<br>
+            this.gender = gender;<br>
+        }<br>
+        public virtual void Display()<br>
+        {<br>
+            Console.WriteLine("\n.......PERSONAL DETAILS.....\n");<br>
+            Console.WriteLine("Name   :" + name);<br>
+            Console.WriteLine("Age   :" + age);<br>
+            Console.WriteLine("gender   :" + gender);<br>
+        }<br>
+    }<br>
+    class CourseDetails : PersonalDetails<br>
+    {<br>
+        int regno;<br>
+        string course;<br>
+        int semester;<br>
+        public CourseDetails(string name, int age, string gender, int regno, string course, int semester) : base(name, age, gender)<br>
+        {<br>
+            this.regno = regno;<br>
+            this.course = course;<br>
+            this.semester = semester;<br>
+        }<br>
+        public override void Display()
+        {<br>
+            base.Display();<br>
+            Console.WriteLine("\n......COURSE DETAILS.......\n");<br>
+            Console.WriteLine("Register Number: " + regno);<br>
+            Console.WriteLine("Course: " + course);<br>
+            Console.WriteLine("Semester: " + semester);<br>
+        }<br>
+    }<br>
+    class MarksDetails : CourseDetails<br>
+    {<br>
+        int[] Marks = new int[5];<br>
+        int total;<br>
+        float average;<br>
+        string grade;<br>
+        int flagFail;<br>
+        public MarksDetails(string name, int age, string gender, int regno, string course, int semester, int[] marks) : base(name, age, gender, regno, course, semester)<br>
+        {<br>
+            total = 0;<br>
+            for (int i = 0; i < 5; i++)<br>
+            {<br>
+                this.Marks[i] = marks[i];<br>
+                total += marks[i];<br>
+                if (marks[i] < 35)<br>
+                {<br>
+                    flagFail = 1;<br>
+                }<br>
+            }<br>
+            Calculate();<br>
+        }<br>
+        private void Calculate()<br>
+        {<br>
+            average = total / 5;<br>
+            if (flagFail == 1 || average < 40)<br>
+                grade = "Fail";<br>
+            else if (average >= 70)<br>
+                grade = "Distinction";<br>
+            else if (average >= 60)<br>
+                grade = "first class";<br>
+            else if (average >= 50)<br>
+                grade = "second class";<br>
+            else<br>
+                grade = "pass class";<br>
 
+   }<br>
+        public override void Display()<br>
+        {<br>
+            base.Display();<br>
+            Console.WriteLine("\n.......MARKS DETAILS.....\n");<br>
+            Console.WriteLine("Marks in 5 subjects: ");<br>
+            for (int i = 0; i < 5; i++)<br>
+                Console.Write(Marks[i] + " ");<br>
+            Console.WriteLine();<br>
+            Console.WriteLine("Total: " + total);<br>
+            Console.WriteLine("average: " + average);<br>
+            Console.WriteLine("Grade: " + grade);<br>
+        }<br>
+    }<br>
+    class MultiLevel<br>
+    {<br>
+        public static void Main(string[] args)<br>
+        {<br>
+            MarksDetails student1 = new MarksDetails("Rachana", 21, "Female", 20220001, "MSC", 5, new int[] { 77, 80, 98, 95, 90 });<br>
+            student1.Display();<br>
+        }<br>
+    }<br>
+}<br>
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154626694-c7dd0f27-98a1-49b7-a5b0-21f4c798d34a.png)
 
-
+**4 C# Program to create Gray code.**
