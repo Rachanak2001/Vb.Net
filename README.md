@@ -424,8 +424,96 @@ namespace ex11<br>
 
 ![image](https://user-images.githubusercontent.com/97940850/154633617-d4c0cfbd-1716-4701-a7c4-dcb4baffae82.png)
 
+**11. C# Program to Create a file check the existence of a file and read the content of the file**
+using System;
+using System.IO;
+namespace ex14
+{
+    class FileRead
+    {
+        public static void Main()
+        {
+            string fileName;
+            while (true)
+            {
+                Console.WriteLine("\n.......MENU.....\n");
+                Console.WriteLine("\n1. Create a File");
+                Console.WriteLine("\n2. Existence of  a File");
+                Console.WriteLine("\n3. Read the content of a File");
+                Console.WriteLine("\n4. Exit");
+                Console.Write("\n enter your choice: ");
+                int ch = int.Parse(Console.ReadLine());
+                switch (ch)
+                {
+                    case 1:
+                        Console.Write("\n Enter the file name to create: ");
+                        fileName = Console.ReadLine();
+                        Console.WriteLine("\n write the content to the file: \n");
+                        string r = Console.ReadLine();
+                        using (StreamWriter fileStr = File.CreateText(fileName))
+                        {
+                            fileStr.WriteLine(r);
+                        }
+                        Console.WriteLine("File is created...");
+                        break;
+                    case 2:
+                        Console.Write("\n Enter the file name: ");
+                        fileName = Console.ReadLine();
+                        if (File.Exists(fileName))
+                        {
+                            Console.WriteLine("File exists...");
+                        }
+                        else
+                        {
+                            Console.WriteLine("File does not exist in the current directory!");
+                        }
+                        break;
+                    case 3:
+                        Console.Write("\n Enter the file name to read the content: ");
+                        fileName = Console.ReadLine();
+                        if (File.Exists(fileName))
+                        {
+                            using (StreamReader sr = File.OpenText(fileName))
+                            {
+                                string s = " ";
+                                Console.WriteLine("here is the content of the file: ");
+                                while ((s = sr.ReadLine()) != null)
+                                {
+                                    Console.WriteLine(s);
+                                }
+                                Console.WriteLine(" ");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("File does not exixts");
+                        }
+                        break;
+                    case 4:
+                        Console.WriteLine("\n Exiting...");
+                        return;
+                    default:
+                        Console.WriteLine("\n Invalid choice");
+                        break;
+                }
+            }
 
-**12. C# Program to Create a file check the existence of a file and read the content of the file**
+
+   }
+   }
+}
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154637104-3b7c6fdd-7cf8-4c8d-bf69-6c96ce196451.png)
+![image](https://user-images.githubusercontent.com/97940850/154636882-5816b3b8-cf65-4bb9-8106-93c9a4758025.png)
+![image](https://user-images.githubusercontent.com/97940850/154637007-661901ac-6f05-44fb-b913-620db4a565fa.png)
+
+
+
+
+
+
+
+**12. C# Program to perform a file comparision**
 using System;
 using System.IO;
 
