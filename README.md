@@ -320,3 +320,32 @@ namespace ex9<br>
 ![image](https://user-images.githubusercontent.com/97940850/154630837-497cda04-9cc8-475c-806f-66163dcc091b.png)
 ![image](https://user-images.githubusercontent.com/97940850/154631120-f7e8f60d-bd41-4964-a573-558c35734e4a.png)
 
+**8 C# Program to find the frequency of the word "is" in a given sentence**<br>
+using System;<br>
+namespace ex10<br>
+{<br>
+    class FrequencyIS<br>
+    {<br>
+        static void Main(string[] args)<br>
+        {<br>
+            int count = 0;<br>
+            string inputString;<br>
+            Console.WriteLine("\n........FREQUENCY OR WORD 'is'.........");<br>
+            Console.WriteLine("\n Enter the input string: ");<br>
+            inputString = Console.ReadLine();<br>
+            char[] seperator = { ',', ' ', '.', '!', '\n' };<br>
+            string testString = inputString.ToLower();<br>
+            string[] outcomes = testString.Split(seperator);<br>
+            foreach(String s in outcomes)<br>
+            {<br>
+                Console.WriteLine(s);<br>
+                if (s == "is")<br>
+                    count++;<br>
+            }<br>
+            Console.WriteLine("\n Number of 'is' in '" + inputString + "'is: " + count);<br>
+
+   }<br>
+  }<br>
+}<br>
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/154631764-8376067d-b911-4d81-9600-94c94ab3baee.png)
