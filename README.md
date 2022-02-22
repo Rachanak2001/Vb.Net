@@ -404,238 +404,254 @@ namespace ex11<br>
 
 **10 C# program to find the sum of the values in diagonal of the matrix**<br>
 
+ using System;<br>
 
+namespace ex10 { class SumOfDiagonals<br>
+{ static void Main(string[] args)<br>
+{<br>
+int MaxRow, MaxCol, Sum = 0;<br>
+int[,] Matrix;<br>
 
+Console.WriteLine("\n---------- SUM OF DIAGONAL OF A MATRIX ----------\n"); Console.Write("\nEnter the number of rows: ");<br>
+MaxRow = Convert.ToInt32(Console.ReadLine());<br>
+Console.Write("\nEnter the number of columns: ");<br>
+MaxCol = Convert.ToInt32(Console.ReadLine());<br>
+if (MaxRow != MaxCol)<br>
+{<br>
+Console.WriteLine("\nThe Dimensions entered are not of Square Matrix."); Console.WriteLine("\nExiting the Program..");<br>
+return;<br>
+<br>
+} Matrix = new int[MaxRow, MaxCol];<br>
 
+for (int i = 0; i < MaxRow; i++)<br>
+{ for (int j = 0; j < MaxCol; j++)<br>
+{ Console.Write("\nEnter the ({0},{1})th element of the matrix: ", (i + 1), (j + 1)); Matrix[i, j] = Convert.ToInt32(Console.ReadLine());<br>
+}<br>
+}<br>
+Console.WriteLine("\nThe entered Matrix is: ");<br>
+for (int i = 0; i < MaxRow; i++)<br>
+{ for (int j = 0; j < MaxCol; j++)<br>
+{<br>
+Console.Write(" " + Matrix[i, j]);<br>
+if (i == j)<br>
+{<br>
+Sum += Matrix[i, j];<br>
+}<br>
+}<br>
+Console.WriteLine();<br>
+} Console.WriteLine("\nThe Sum of Diagonal is " + Sum); }<br>
+}<br>
+}<br>
 
+![image](https://user-images.githubusercontent.com/97940850/154633617-d4c0cfbd-1716-4701-a7c4-dcb4baffae82.png)<br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-![image](https://user-images.githubusercontent.com/97940850/154633617-d4c0cfbd-1716-4701-a7c4-dcb4baffae82.png)
-
-**11. C# Program to Create a file check the existence of a file and read the content of the file**
-using System;
-using System.IO;
-namespace ex14
-{
-    class FileRead
-    {
-        public static void Main()
-        {
-            string fileName;
-            while (true)
-            {
-                Console.WriteLine("\n.......MENU.....\n");
-                Console.WriteLine("\n1. Create a File");
-                Console.WriteLine("\n2. Existence of  a File");
-                Console.WriteLine("\n3. Read the content of a File");
-                Console.WriteLine("\n4. Exit");
-                Console.Write("\n enter your choice: ");
-                int ch = int.Parse(Console.ReadLine());
-                switch (ch)
-                {
-                    case 1:
-                        Console.Write("\n Enter the file name to create: ");
-                        fileName = Console.ReadLine();
-                        Console.WriteLine("\n write the content to the file: \n");
-                        string r = Console.ReadLine();
-                        using (StreamWriter fileStr = File.CreateText(fileName))
+**11. C# Program to Create a file check the existence of a file and read the content of the file**<br>
+using System;<br>
+using System.IO;<br>
+namespace ex14<br>
+{<br>
+    class FileRead<br>
+    {<br>
+        public static void Main()<br>
+        {<br>
+            string fileName;<br>
+            while (true)<br>
+            {<br>
+                Console.WriteLine("\n.......MENU.....\n");<br>
+                Console.WriteLine("\n1. Create a File");<br>
+                Console.WriteLine("\n2. Existence of  a File");<br>
+                Console.WriteLine("\n3. Read the content of a File");<br>
+                Console.WriteLine("\n4. Exit");<br>
+                Console.Write("\n enter your choice: ");<br>
+                int ch = int.Parse(Console.ReadLine());<br>
+                switch (ch)<br>
+                {<br>
+                    case 1:<br>
+                        Console.Write("\n Enter the file name to create: ");<br>
+                        fileName = Console.ReadLine();<br>
+                        Console.WriteLine("\n write the content to the file: \n");<br>
+                        string r = Console.ReadLine();<br>
+                        using (StreamWriter fileStr = File.CreateText(fileName))<br>
+                        {<br>
+                            fileStr.WriteLine(r);<br>
+                        }<br>
+                        Console.WriteLine("File is created...");<br>
+                        break;<br>
+                    case 2:<br>
+                        Console.Write("\n Enter the file name: ");<br>
+                        fileName = Console.ReadLine();<br>
+                        if (File.Exists(fileName))<br>
+                        {<br>
+                            Console.WriteLine("File exists...");<br>
+                        }<br>
+                        else<br>
+                        {<br>
+                            Console.WriteLine("File does not exist in the current directory!");<br>
+                        }<br>
+                        break;<br>
+                    case 3:<br>
+                        Console.Write("\n Enter the file name to read the content: ");<br>
+                        fileName = Console.ReadLine();<br>
+                        if (File.Exists(fileName))<br>
+                        {<br>
+                            using (StreamReader sr = File.OpenText(fileName))<br>
+                            {<br>
+                                string s = " ";<br>
+                                Console.WriteLine("here is the content of the file: ");<br>
+                                while ((s = sr.ReadLine()) != null)<br>
+                                {<br>
+                                    Console.WriteLine(s);<br>
+                                }<br>
+                                Console.WriteLine(" ");<br>
+                            }<br>
+                        }<br>
+                        else<br>
                         {
-                            fileStr.WriteLine(r);
-                        }
-                        Console.WriteLine("File is created...");
-                        break;
-                    case 2:
-                        Console.Write("\n Enter the file name: ");
-                        fileName = Console.ReadLine();
-                        if (File.Exists(fileName))
-                        {
-                            Console.WriteLine("File exists...");
-                        }
-                        else
-                        {
-                            Console.WriteLine("File does not exist in the current directory!");
-                        }
-                        break;
-                    case 3:
-                        Console.Write("\n Enter the file name to read the content: ");
-                        fileName = Console.ReadLine();
-                        if (File.Exists(fileName))
-                        {
-                            using (StreamReader sr = File.OpenText(fileName))
-                            {
-                                string s = " ";
-                                Console.WriteLine("here is the content of the file: ");
-                                while ((s = sr.ReadLine()) != null)
-                                {
-                                    Console.WriteLine(s);
-                                }
-                                Console.WriteLine(" ");
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("File does not exixts");
-                        }
-                        break;
-                    case 4:
-                        Console.WriteLine("\n Exiting...");
-                        return;
-                    default:
-                        Console.WriteLine("\n Invalid choice");
-                        break;
-                }
-            }
+                            Console.WriteLine("File does not exixts");<br>
+                        }<br>
+                        break;<br>
+                    case 4:<br>
+                        Console.WriteLine("\n Exiting...");<br>
+                        return;<br>
+                    default:<br>
+                        Console.WriteLine("\n Invalid choice");<br>
+                        break;<br>
+                }<br>
+            }<br>
 
 
-   }
-   }
-}
+   }<br>
+   }<br>
+}<br>
 **OUTPUT**<br>
-![image](https://user-images.githubusercontent.com/97940850/154637104-3b7c6fdd-7cf8-4c8d-bf69-6c96ce196451.png)
-![image](https://user-images.githubusercontent.com/97940850/154636882-5816b3b8-cf65-4bb9-8106-93c9a4758025.png)
-![image](https://user-images.githubusercontent.com/97940850/154637007-661901ac-6f05-44fb-b913-620db4a565fa.png)
+![image](https://user-images.githubusercontent.com/97940850/154637104-3b7c6fdd-7cf8-4c8d-bf69-6c96ce196451.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/154636882-5816b3b8-cf65-4bb9-8106-93c9a4758025.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/154637007-661901ac-6f05-44fb-b913-620db4a565fa.png)<br>
 
 
+**12. C# Program to perform a file comparision**<br>
+using System;<br>
+using System.IO;<br>
 
-
-
-
-
-**12. C# Program to perform a file comparision**
-using System;
-using System.IO;
-
-namespace ex14
-{
-    class FileRead
-    {
-        public static void Main()
-        {
-            string file1;
-            string file2;
-            Console.Write("enter the first file path: ");
-            file1 = Console.ReadLine();
-            Console.Write("enter the second file path: ");
-            file2 = Console.ReadLine();
-            if(!File.Exists(file1))
-            {
-                Console.WriteLine("First file does not exist!");
-            }
-           else if (!File.Exists(file2))
-            {
-                Console.WriteLine("Second file does not exist!");
-            }
-            else if(File.ReadAllText(file1)==File.ReadAllText(file2))
-            {
-                Console.WriteLine("Both file contain the same content");
-            }
-            else
-            {
-                Console.WriteLine("Content of file are not same");
-            }
-            
-   }
-   }
-}
+namespace ex14<br>
+{<br>
+    class FileRead<br>
+    {<br>
+        public static void Main()<br>
+        {<br>
+            string file1;<br>
+            string file2;<br>
+            Console.Write("enter the first file path: ");<br>
+            file1 = Console.ReadLine();<br>
+            Console.Write("enter the second file path: ");<br>
+            file2 = Console.ReadLine();<br>
+            if(!File.Exists(file1))<br>
+            {<br>
+                Console.WriteLine("First file does not exist!");<br>
+            }<br>
+           else if (!File.Exists(file2))<br>
+            {<br>
+                Console.WriteLine("Second file does not exist!");<br>
+            }<br>
+            else if(File.ReadAllText(file1)==File.ReadAllText(file2))<br>
+            {<br>
+                Console.WriteLine("Both file contain the same content");<br>
+            }<br>
+            else<br>
+            {<br>
+                Console.WriteLine("Content of file are not same");<br>
+            }<br>
+            <br>
+   }<br>
+   }<br>
+}<br>
 **OUTPUT**<br>
-![image](https://user-images.githubusercontent.com/97940850/154635067-d805cd9c-76c0-42c2-bff2-32fb27cb6394.png)
-![image](https://user-images.githubusercontent.com/97940850/154635125-b41c4a15-cb33-431a-826c-8e526ba2ca91.png)
-![image](https://user-images.githubusercontent.com/97940850/154635349-c83e6091-8b72-4f2a-b962-100547c613bd.png)
-![image](https://user-images.githubusercontent.com/97940850/154634783-c273d4c6-77eb-4198-8251-b2f70cf8fee4.png)
-![image](https://user-images.githubusercontent.com/97940850/154634965-84d7a2e7-dc2a-4348-877c-90cb2e225948.png)
+![image](https://user-images.githubusercontent.com/97940850/154635067-d805cd9c-76c0-42c2-bff2-32fb27cb6394.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/154635125-b41c4a15-cb33-431a-826c-8e526ba2ca91.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/154635349-c83e6091-8b72-4f2a-b962-100547c613bd.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/154634783-c273d4c6-77eb-4198-8251-b2f70cf8fee4.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/154634965-84d7a2e7-dc2a-4348-877c-90cb2e225948.png)<br>
 
 **13. **<br>
-using System;
-namespace ex17
-{
-    class Fraction : IComparable
-    {
-        int z, n;
-        public Fraction(int z, int n)
-        {
-            this.z = z;
-            this.n = n;
-        }
-        public static Fraction operator +(Fraction a, Fraction b)
-        {
-            return new Fraction(a.z * b.n + a.n * b.z, a.n * b.n);
-        }
-        public static Fraction operator *(Fraction a, Fraction b)
-        {
-            return new Fraction(a.z * b.z, a.n * b.n);
-        }
-        public int CompareTo(object obj)
-        {
-            Fraction f = (Fraction)obj;
-            if ((float)z / n < (float)f.z / f.n)
-                return -1;
+using System;<br>
+namespace ex17<br>
+{<br>
+    class Fraction : IComparable<br>
+    {<br>
+        int z, n;<br>
+        public Fraction(int z, int n)<br>
+        {<br>
+            this.z = z;<br>
+            this.n = n;<br>
+        }<br>
+        public static Fraction operator +(Fraction a, Fraction b)<br>
+        {<br>
+            return new Fraction(a.z * b.n + a.n * b.z, a.n * b.n);<br>
+        }<br>
+        public static Fraction operator *(Fraction a, Fraction b)<br>
+        {<br>
+            return new Fraction(a.z * b.z, a.n * b.n);<br>
+        }<br>
+        public int CompareTo(object obj)<br>
+        {<br>
+            Fraction f = (Fraction)obj;<br>
+            if ((float)z / n < (float)f.z / f.n)<br>
+                return -1;<br>
             else if ((float)z / n > (float)f.z / f.n)
-                return 1;
-            else
-                return 0;
-        }
-        public override string ToString()
-        {
-            return z + "/" + n;
-        }
-    }
-    class ICompInterface
-    {
-        public static void Main()
-        {
+                return 1;<br>
+            else<br>
+                return 0;<br>
+        }<br>
+        public override string ToString()<br>
+        {<br>
+            return z + "/" + n;<br>
+        }<br>
+    }<br>
+    class ICompInterface<br>
+    {<br>
+        public static void Main()<br>
+        {<br>
 
-   Fraction[] a = {
- new Fraction(5,2),
- new Fraction(29,6),
- new Fraction(4,5),
- new Fraction(10,8),
- new Fraction(34,7)
- };
-            Array.Sort(a);
-            Console.WriteLine("Implementing the IComparable Interface in " + "Displaying Fractions: ");
-            foreach (Fraction f in a)
-            {
-                Console.WriteLine(f + " ");
-            }
-            Console.WriteLine();
-            Console.ReadLine();
-        }
-    }
-}
+   Fraction[] a = {<br>
+ new Fraction(5,2),<br>
+ new Fraction(29,6),<br>
+ new Fraction(4,5),<br>
+ new Fraction(10,8),<br>
+ new Fraction(34,7)<br>
+ };<br>
+            Array.Sort(a);<br>
+            Console.WriteLine("Implementing the IComparable Interface in " + "Displaying Fractions: ");<br>
+            foreach (Fraction f in a)<br>
+            {<br>
+                Console.WriteLine(f + " ");<br>
+            }<br>
+            Console.WriteLine();<br>
+            Console.ReadLine();<br>
+        }<br>
+    }<br>
+}<br>
 **OUTPUT**<br>
-![image](https://user-images.githubusercontent.com/97940850/154637579-23b8dacf-5de8-4679-a073-abcda81202d8.png)
+![image](https://user-images.githubusercontent.com/97940850/154637579-23b8dacf-5de8-4679-a073-abcda81202d8.png)<br>
 
 **14 **<br>
-using System;
-using System.Threading;
+using System;<br>
+using System.Threading;<br>
 
-namespace ex18
-{
-    class ThreadPoolProg
-    {
-        public void ThreadFun1(object obj)
-        {
-            int loop = 0;
-            for (loop = 0; loop <= 4; loop++)
-            {
-                Console.WriteLine("Thread1 is executing");
+namespace ex18<br>
+{<br>
+    class ThreadPoolProg<br>
+    {<br>
+        public void ThreadFun1(object obj)<br>
+        {<br>
+            int loop = 0;<br>
+            for (loop = 0; loop <= 4; loop++)<br>
+            {<br>
+                Console.WriteLine("Thread1 is executing");<br>
 
-  }
-        }
-        public void ThreadFun2(object obj)
-        {
+  }<br>
+        }<br>
+        public void ThreadFun2(object obj)<br>
+        {<br>
             int loop = 0;
             for (loop = 0; loop <= 4; loop++)
             {
