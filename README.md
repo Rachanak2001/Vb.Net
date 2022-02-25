@@ -726,4 +726,24 @@ public class Age<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154638151-631c25eb-770d-43a1-bfd8-12dbd098c717.png)<br>
 
-
+**16. C# program to generate fibonacci series.**
+using System;
+public class FibonacciExample
+{
+    public static void Main(string[] args)
+    {
+        int n1 = 0, n2 = 1, n3, i, number;
+        Console.Write("Enter the number of elements: ");
+        number = int.Parse(Console.ReadLine());
+        Console.Write(n1 + " " + n2 + " "); //printing 0 and 1    
+        for (i = 2; i < number; ++i) //loop starts from 2 because 0 and 1 are already printed    
+        {
+            n3 = n1 + n2;
+            Console.Write(n3 + " ");
+            n1 = n2;
+            n2 = n3;
+        }
+    }
+}
+**OUTPUT**
+![image](https://user-images.githubusercontent.com/97940850/155657785-2bc1b9c6-fa2f-4a34-a419-24409d61e134.png)
