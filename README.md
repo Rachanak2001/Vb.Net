@@ -775,4 +775,29 @@ public class PrimeNumberExample<br>
 ![image](https://user-images.githubusercontent.com/97940850/155659035-ddb1e636-c75d-4c7c-a1e1-48c66c86b52c.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/155658911-39bd075e-c7c0-4ac3-90d9-c9e030400fdb.png)<br>
 
-**18. C# program to check a palindrom number or not**
+**18. C# program to check a palindrom number or not**<br>
+using System;<br>
+public class PalindromeExample<br>
+{<br>
+    public static void Main(string[] args)<br>
+    {<br>
+        int n, r, sum = 0, temp;<br>
+        Console.Write("Enter the Number: ");<br>
+        n = int.Parse(Console.ReadLine());<br>
+        temp = n;<br>
+        while (n > 0)<br>
+        {<br>
+            r = n % 10;<br>
+            sum = (sum * 10) + r;<br>
+            n = n / 10;<br>
+        }<br>
+        if (temp == sum)<br>
+            Console.Write("Number is Palindrome.");<br>
+        else<br>
+            Console.Write("Number is not Palindrome");<br>
+    }<br>
+}<br>
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/155659869-5b1b78c0-af9f-4d3c-8270-008043e7a190.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/155659980-ff53ed9c-1dee-4251-8ce5-5406a54a51b7.png)<br>
+
