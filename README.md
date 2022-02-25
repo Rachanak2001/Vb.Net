@@ -861,4 +861,20 @@ using System;  <br>
   **OUTPUT**<br>
   ![image](https://user-images.githubusercontent.com/97940850/155662699-37d7f14f-efa6-4318-ba57-3e2aafc164ef.png)<br>
   
-  
+  **22. C# Program to swap two numbers without using third variable.**<br>
+  using System;  <br>
+  public class SwapExample  <br>
+   {  <br>
+     public static void Main(string[] args)  <br>
+      {  <br>
+       int  a=5, b=10;            <br>
+       Console.WriteLine("Before swap a= "+a+" b= "+b);  <br>  
+       a=a*b; //a=50 (5*10)      <br>
+       b=a/b; //b=5 (50/10)      <br>
+       a=a/b; //a=10 (50/5)    <br>
+       Console.Write("After swap a= "+a+" b= "+b);     <br>  
+     }  <br>
+  }   <br>
+  **OUTPUT**<br>
+  ![image](https://user-images.githubusercontent.com/97940850/155663724-69ed18af-3ba3-424b-8729-741740489632.png)<br>
+
