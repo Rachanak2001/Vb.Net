@@ -572,7 +572,7 @@ namespace ex14<br>
 ![image](https://user-images.githubusercontent.com/97940850/154634783-c273d4c6-77eb-4198-8251-b2f70cf8fee4.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/154634965-84d7a2e7-dc2a-4348-877c-90cb2e225948.png)<br>
 
-**13. **<br>
+**13.. C# program to Implement IComparable interface. **<br>
 using System;<br>
 namespace ex17<br>
 {<br>
@@ -633,7 +633,7 @@ namespace ex17<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154637579-23b8dacf-5de8-4679-a073-abcda81202d8.png)<br>
 
-**14 **<br>
+**14 c# program to create thread pools. **<br>
 using System;<br>
 using System.Threading;<br>
 
@@ -676,7 +676,7 @@ namespace ex18<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154637919-1c05db93-56bd-4188-9f6e-741e0ad7d1fe.png)<br>
 
-**15 **<br>
+**15. C# program to demostrate error handling using try,catch and finally block **<br>
 using System;<br>
 namespace ex19<br>
 {<br>
