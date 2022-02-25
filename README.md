@@ -801,3 +801,64 @@ public class PalindromeExample<br>
 ![image](https://user-images.githubusercontent.com/97940850/155659869-5b1b78c0-af9f-4d3c-8270-008043e7a190.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/155659980-ff53ed9c-1dee-4251-8ce5-5406a54a51b7.png)<br>
 
+**19. c# program to find a factorial of a number.**<br>
+using System;  <br>
+  public class FactorialExample  <br>
+  {  <br>
+     public static void Main(string[] args) <br> 
+     {  <br>
+       int i,fact=1,number;   <br>   
+       Console.Write("Enter any Number: ");   <br>   
+       number= int.Parse(Console.ReadLine());     <br>
+       for(i=1;i<=number;i++){      <br>
+        fact=fact*i;      <br>
+     }      <br>
+       Console.Write("Factorial of " +number+" is: "+fact);    <br>
+     }  <br>
+  } <br>
+  **OUTPUT**<br>
+  ![image](https://user-images.githubusercontent.com/97940850/155661285-d1078b59-4ce7-42fb-925b-0f284606b844.png)<br>
+
+**20. C# Program to check a armstrong number or not.**<br>
+using System;  <br>
+  public class SumExample  <br>
+   {  <br>
+     public static void Main(string[] args)  <br>
+      {  <br>
+       int  n,sum=0,m;         <br>
+       Console.Write("Enter a number: ");     <br> 
+       n= int.Parse(Console.ReadLine());     <br>
+       while(n>0)      <br>
+       {      <br>
+        m=n%10;      <br>
+        sum=sum+m;      <br>
+        n=n/10;      <br>
+       }      <br>
+       Console.Write("Sum is= "+sum); <br>     
+     }  <br>
+  }  <br>
+  **OUTPUT**<br>
+  ![image](https://user-images.githubusercontent.com/97940850/155662154-6136ac80-78ef-4962-8917-0268bc7d6fd9.png)<br>
+
+**21. C# Program to Reverse a number.**<br>
+using System;  <br>
+  public class ReverseExample <br> 
+   {  <br>
+     public static void Main(string[] args)  <br>
+      {  <br>
+       int  n, reverse=0, rem;          <br> 
+       Console.Write("Enter a number: ");    <br>  
+       n= int.Parse(Console.ReadLine());   <br>  
+       while(n!=0)      <br>
+       {      <br>
+        rem=n%10;     <br>   
+        reverse=reverse*10+rem;      <br>
+        n/=10;      <br>
+       }      <br>
+       Console.Write("Reversed Number: "+reverse);   <br>    
+    }  <br>
+  }  <br>
+  **OUTPUT**<br>
+  ![image](https://user-images.githubusercontent.com/97940850/155662699-37d7f14f-efa6-4318-ba57-3e2aafc164ef.png)<br>
+  
+  
