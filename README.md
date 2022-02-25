@@ -747,3 +747,32 @@ public class FibonacciExample<br>
 }<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/155657785-2bc1b9c6-fa2f-4a34-a419-24409d61e134.png)<br>
+
+**17. C# program to generate prime numbers.**<br>
+using System;<br>
+public class PrimeNumberExample<br>
+{<br>
+    public static void Main(string[] args)<br>
+    {<br>
+        int n, i, m = 0, flag = 0;<br>
+        Console.Write("Enter the Number to check Prime: ");<br>
+        n = int.Parse(Console.ReadLine());<br>
+        m = n / 2;<br>
+        for (i = 2; i <= m; i++)<br>
+        {<br>
+            if (n % i == 0)<br>
+            {<br>
+                Console.Write("Number is not Prime.");<br>
+                flag = 1;<br>
+                break;<br>
+            }<br>
+        }<br>
+        if (flag == 0)<br>
+            Console.Write("Number is Prime.");<br>
+    }<br>
+}<br>
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/155659035-ddb1e636-c75d-4c7c-a1e1-48c66c86b52c.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/155658911-39bd075e-c7c0-4ac3-90d9-c9e030400fdb.png)<br>
+
+**18. C# program to check a palindrom number or not**
