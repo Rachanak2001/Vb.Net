@@ -964,3 +964,63 @@ namespace EX2
 ![image](https://user-images.githubusercontent.com/97940850/157811585-b1d9cdcd-2205-478d-8e55-68d194fb60e8.png)
 ![image](https://user-images.githubusercontent.com/97940850/157811701-fd70946c-b319-4a1c-afaf-51d38b0a5d14.png)
 
+**22.C# Program to Perform Reversal, Padding and Trimming Operations on String.**
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Ex4
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+   private void button1_Click(object sender, EventArgs e)
+        {
+            string inputString, revstr = "";
+            int Length;
+            inputString = txtInput.Text;
+            Length = inputString.Length - 1;
+            while (Length >= 0)
+            {
+                revstr = revstr + inputString[Length];
+                Length--;
+            }
+            MessageBox.Show("Reverse String Is : " + revstr, "Result");
+
+   }
+
+   private void button2_Click(object sender, EventArgs e)
+        {
+            string inputString;
+            inputString = txtInput.Text;
+            MessageBox.Show("The String After Trimming : " + inputString.Trim(), "Result");
+        }
+
+   private void button3_Click(object sender, EventArgs e)
+        {
+            string inputString;
+            inputString = txtInput.Text;
+            inputString = inputString.PadLeft(10, '*');
+            inputString = inputString.PadRight(15, '*');
+            MessageBox.Show("String After Padding : " + inputString, "Result");
+        }
+    }
+}
+**OUTPUT**
+![image](https://user-images.githubusercontent.com/97940850/157820042-fad259a0-c217-4985-8061-ed9917f82b83.png)
+![image](https://user-images.githubusercontent.com/97940850/157820255-85ec84ed-f8a2-4ce9-939f-e364e778ad3c.png)
+![image](https://user-images.githubusercontent.com/97940850/157820391-2179174d-8bf5-40fa-b2b9-77a415f3ef50.png)
+![image](https://user-images.githubusercontent.com/97940850/157820500-e232d52a-8749-4a9d-ae04-f793c46ab17b.png)
+
+
+
