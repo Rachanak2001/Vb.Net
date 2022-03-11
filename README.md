@@ -878,3 +878,89 @@ using System;  <br>
   **OUTPUT**<br>
   ![image](https://user-images.githubusercontent.com/97940850/155663724-69ed18af-3ba3-424b-8729-741740489632.png)<br>
 
+**WINDOW APPLICATION**
+**22. C# Program to Convert Digit to Word.**
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace EX2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+   private void button1_Click(object sender, EventArgs e)
+            {
+                lbl_words.Text = NumtoWord(long.Parse(txt_num.Text));
+                lbl_words.Visible = true;
+            }
+            public string NumtoWord(long number)
+            {
+                string word = "";
+                if (number == 0)
+                {
+                    return "Zero";
+                }
+                if (number < 0)
+                {
+                    return "Minus" + Math.Abs(number);
+                }
+                if (number / 10000000 > 0)
+                {
+                    word += NumtoWord(number / 10000000) + "Corer";
+                    number %= 10000000;
+                }
+   if (number / 100000 > 0)
+                {
+                    word += NumtoWord(number / 100000) + "Lacs";
+                    number %= 100000;
+                }
+                if (number / 1000 > 0)
+                {
+                    word += NumtoWord(number / 1000) + "Thousand";
+                    number %= 1000;
+                }
+                if (number / 100 > 0)
+                {
+                    word += NumtoWord(number / 100) + "Hundred";
+                    number %= 100;
+                }
+                if (number > 0)
+                {
+                    string[] units = new string[] { "Zero", "One", "Two", "Three", "Four", "Five", "Six",
+                                        "Seven", "Eight", "Nine","Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
+                                           "seventeen", "Eighteen", "Nineteen" };
+                    string[] Tens = new string[] { "Zero", "Ten", "Twenty", "Thirty", "Fourty", "Fifty",
+                                            "Sixty", "Seventy", "Eighty", "Ninety" };
+                    if (number < 20)
+                    {
+                        word += units[number];
+                    }
+                    else
+                    {
+                        word += Tens[number / 10];
+                        if (number % 10 > 0)
+                        {
+                            word += units[number % 10];
+                        }
+                    }
+                }
+                return word;
+            }
+          }
+    }
+
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/157811585-b1d9cdcd-2205-478d-8e55-68d194fb60e8.png)
+![image](https://user-images.githubusercontent.com/97940850/157811701-fd70946c-b319-4a1c-afaf-51d38b0a5d14.png)
+
