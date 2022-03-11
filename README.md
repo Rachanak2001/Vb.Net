@@ -878,149 +878,148 @@ using System;  <br>
   **OUTPUT**<br>
   ![image](https://user-images.githubusercontent.com/97940850/155663724-69ed18af-3ba3-424b-8729-741740489632.png)<br>
 
-**WINDOW APPLICATION**
-**22. C# Program to Convert Digit to Word.**
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+**WINDOW APPLICATION**<br>
+**22. C# Program to Convert Digit to Word.**<br>
+using System;<br>
+using System.Collections.Generic;<br>
+using System.ComponentModel;<br>
+using System.Data;<br>
+using System.Drawing;<br>
+using System.Linq;<br>
+using System.Text;<br>
+using System.Threading.Tasks;<br>
+using System.Windows.Forms;<br>
 
-namespace EX2
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-   private void button1_Click(object sender, EventArgs e)
-            {
-                lbl_words.Text = NumtoWord(long.Parse(txt_num.Text));
-                lbl_words.Visible = true;
-            }
-            public string NumtoWord(long number)
-            {
-                string word = "";
-                if (number == 0)
-                {
-                    return "Zero";
-                }
-                if (number < 0)
-                {
-                    return "Minus" + Math.Abs(number);
-                }
-                if (number / 10000000 > 0)
-                {
-                    word += NumtoWord(number / 10000000) + "Corer";
-                    number %= 10000000;
-                }
-   if (number / 100000 > 0)
-                {
-                    word += NumtoWord(number / 100000) + "Lacs";
-                    number %= 100000;
-                }
-                if (number / 1000 > 0)
-                {
-                    word += NumtoWord(number / 1000) + "Thousand";
-                    number %= 1000;
-                }
-                if (number / 100 > 0)
-                {
-                    word += NumtoWord(number / 100) + "Hundred";
-                    number %= 100;
-                }
-                if (number > 0)
-                {
-                    string[] units = new string[] { "Zero", "One", "Two", "Three", "Four", "Five", "Six",
-                                        "Seven", "Eight", "Nine","Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
-                                           "seventeen", "Eighteen", "Nineteen" };
-                    string[] Tens = new string[] { "Zero", "Ten", "Twenty", "Thirty", "Fourty", "Fifty",
-                                            "Sixty", "Seventy", "Eighty", "Ninety" };
-                    if (number < 20)
-                    {
-                        word += units[number];
-                    }
-                    else
-                    {
-                        word += Tens[number / 10];
-                        if (number % 10 > 0)
-                        {
-                            word += units[number % 10];
-                        }
-                    }
-                }
-                return word;
-            }
-          }
-    }
+namespace EX2<br>
+{<br>
+    public partial class Form1 : Form<br>
+    {<br>
+        public Form1()<br>
+        {<br>
+            InitializeComponent();<br>
+        }<br>
+<br>
+   private void button1_Click(object sender, EventArgs e)<br>
+            {<br>
+                lbl_words.Text = NumtoWord(long.Parse(txt_num.Text));<br>
+                lbl_words.Visible = true;<br>
+            }<br>
+            public string NumtoWord(long number)<br>
+            {<br>
+                string word = "";<br>
+                if (number == 0)<br>
+                {<br>
+                    return "Zero";<br>
+                }<br>
+                if (number < 0)<br>
+                {<br>
+                    return "Minus" + Math.Abs(number);<br>
+                }<br>
+                if (number / 10000000 > 0)<br>
+                {<br>
+                    word += NumtoWord(number / 10000000) + "Corer";<br>
+                    number %= 10000000;<br>
+                }<br>
+   if (number / 100000 > 0)<br>
+                {<br>
+                    word += NumtoWord(number / 100000) + "Lacs";<br>
+                    number %= 100000;<br>
+                }<br>
+                if (number / 1000 > 0)<br>
+                {<br>
+                    word += NumtoWord(number / 1000) + "Thousand";<br>
+                    number %= 1000;<br>
+                }<br>
+                if (number / 100 > 0)<br>
+                {<br>
+                    word += NumtoWord(number / 100) + "Hundred";<br>
+                    number %= 100;<br>
+                }<br>
+                if (number > 0)<br>
+                {<br>
+                    string[] units = new string[] { "Zero", "One", "Two", "Three", "Four", "Five", "Six",<br>
+                                        "Seven", "Eight", "Nine","Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",<br>
+                                           "seventeen", "Eighteen", "Nineteen" };<br>
+                    string[] Tens = new string[] { "Zero", "Ten", "Twenty", "Thirty", "Fourty", "Fifty",<br>
+                                            "Sixty", "Seventy", "Eighty", "Ninety" };<br>
+                    if (number < 20)<br>
+                    {<br>
+                        word += units[number];<br>
+                    }<br>
+                    else<br>
+                    {<br>
+                        word += Tens[number / 10];<br>
+                        if (number % 10 > 0)<br>
+                        {<br>
+                            word += units[number % 10];<br>
+                        }<br>
+                    }<br>
+                }<br>
+                return word;<br>
+            }<br>
+          }<br>
+    }<br>
 
 **OUTPUT**<br>
-![image](https://user-images.githubusercontent.com/97940850/157811585-b1d9cdcd-2205-478d-8e55-68d194fb60e8.png)
-![image](https://user-images.githubusercontent.com/97940850/157811701-fd70946c-b319-4a1c-afaf-51d38b0a5d14.png)
+![image](https://user-images.githubusercontent.com/97940850/157811585-b1d9cdcd-2205-478d-8e55-68d194fb60e8.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/157811701-fd70946c-b319-4a1c-afaf-51d38b0a5d14.png)<br>
 
-**22.C# Program to Perform Reversal, Padding and Trimming Operations on String.**
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+**22.C# Program to Perform Reversal, Padding and Trimming Operations on String.**<br>
+using System;<br>
+using System.Collections.Generic;<br>
+using System.ComponentModel;<br>
+using System.Data;<br>
+using System.Drawing;<br>
+using System.Linq;<br>
+using System.Text;<br>
+using System.Threading.Tasks;<br>
+using System.Windows.Forms;<br>
+<br>
+namespace Ex4<br>
+{<br>
+    public partial class Form1 : Form<br>
+    {<br>
+        public Form1()<br>
+        {<br>
+            InitializeComponent();<br>
+        }<br>
+<br>
+   private void button1_Click(object sender, EventArgs e)<br>
+        {<br>
+            string inputString, revstr = "";<br>
+            int Length;<br>
+            inputString = txtInput.Text;<br>
+            Length = inputString.Length - 1;<br>
+            while (Length >= 0)<br>
+            {<br>
+                revstr = revstr + inputString[Length];<br>
+                Length--;<br>
+            }<br>
+            MessageBox.Show("Reverse String Is : " + revstr, "Result");<br>
 
-namespace Ex4
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
-        }
+   }<br>
+<br>
+   private void button2_Click(object sender, EventArgs e)<br>
+        {<br>
+            string inputString;<br>
+            MessageBox.Show("The String After Trimming : " + inputString.Trim(), "Result");<br>
+        }<br>
 
-   private void button1_Click(object sender, EventArgs e)
-        {
-            string inputString, revstr = "";
-            int Length;
-            inputString = txtInput.Text;
-            Length = inputString.Length - 1;
-            while (Length >= 0)
-            {
-                revstr = revstr + inputString[Length];
-                Length--;
-            }
-            MessageBox.Show("Reverse String Is : " + revstr, "Result");
-
-   }
-
-   private void button2_Click(object sender, EventArgs e)
-        {
-            string inputString;
-            inputString = txtInput.Text;
-            MessageBox.Show("The String After Trimming : " + inputString.Trim(), "Result");
-        }
-
-   private void button3_Click(object sender, EventArgs e)
-        {
-            string inputString;
-            inputString = txtInput.Text;
-            inputString = inputString.PadLeft(10, '*');
-            inputString = inputString.PadRight(15, '*');
-            MessageBox.Show("String After Padding : " + inputString, "Result");
-        }
-    }
-}
-**OUTPUT**
-![image](https://user-images.githubusercontent.com/97940850/157820042-fad259a0-c217-4985-8061-ed9917f82b83.png)
-![image](https://user-images.githubusercontent.com/97940850/157820255-85ec84ed-f8a2-4ce9-939f-e364e778ad3c.png)
-![image](https://user-images.githubusercontent.com/97940850/157820391-2179174d-8bf5-40fa-b2b9-77a415f3ef50.png)
-![image](https://user-images.githubusercontent.com/97940850/157820500-e232d52a-8749-4a9d-ae04-f793c46ab17b.png)
+   private void button3_Click(object sender, EventArgs e)<br>
+        {<br>
+            string inputString;<br>
+            inputString = txtInput.Text;<br>
+            inputString = inputString.PadLeft(10, '*');<br>
+            inputString = inputString.PadRight(15, '*');<br>
+            MessageBox.Show("String After Padding : " + inputString, "Result");<br>
+        }<br>
+    }<br>
+}<br>
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/157820042-fad259a0-c217-4985-8061-ed9917f82b83.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/157820255-85ec84ed-f8a2-4ce9-939f-e364e778ad3c.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/157820391-2179174d-8bf5-40fa-b2b9-77a415f3ef50.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/157820500-e232d52a-8749-4a9d-ae04-f793c46ab17b.png)<br>
 
 
 
