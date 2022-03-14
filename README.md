@@ -965,57 +965,57 @@ namespace EX2<br>
 ![image](https://user-images.githubusercontent.com/97940850/157811701-fd70946c-b319-4a1c-afaf-51d38b0a5d14.png)<br>
 
 **22.C# Program to Perform Reversal, Padding and Trimming Operations on String.**<br>
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System;<br>
+using System.Collections.Generic;<br>
+using System.ComponentModel;<br>
+using System.Data;<br>
+using System.Drawing;<br>
+using System.Linq;<br>
+using System.Text;<br>
+using System.Threading.Tasks;<br>
+using System.Windows.Forms;<br>
 
-namespace Ex4
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
-        }
+namespace Ex4<br>
+{<br>
+    public partial class Form1 : Form<br>
+    {<br>
+        public Form1()<br>
+        {<br>
+            InitializeComponent();<br>
+        }<br>
 
-   private void button1_Click(object sender, EventArgs e)
-        {
-            string inputString, revstr = "";
-            int Length;
-            inputString = txtInput.Text;
-            Length = inputString.Length - 1;
-            while (Length >= 0)
-            {
-                revstr = revstr + inputString[Length];
-                Length--;
-            }
-            MessageBox.Show("Reverse String Is : " + revstr, "Result");
-     }
+   private void button1_Click(object sender, EventArgs e)<br>
+        {<br>
+            string inputString, revstr = "";<br>
+            int Length;<br>
+            inputString = txtInput.Text;<br>
+            Length = inputString.Length - 1;<br>
+            while (Length >= 0)<br>
+            {<br>
+                revstr = revstr + inputString[Length];<br>
+                Length--;<br>
+            }<br>
+            MessageBox.Show("Reverse String Is : " + revstr, "Result");<br>
+     }<br>
 
-   private void button2_Click(object sender, EventArgs e)
-        {
-            string inputString;
-            inputString = txtInput.Text;
-            MessageBox.Show("The String After Trimming : " + inputString.Trim(), "Result");
-        }
+   private void button2_Click(object sender, EventArgs e)<br>
+        {<br>
+            string inputString;<br>
+            inputString = txtInput.Text;<br>
+            MessageBox.Show("The String After Trimming : " + inputString.Trim(), "Result");<br>
+        }<br>
 
-   private void button3_Click(object sender, EventArgs e)
-        {
-            string inputString;
-            inputString = txtInput.Text;
-            inputString = inputString.PadLeft(10, '*');
-            inputString = inputString.PadRight(15, '*');
-            MessageBox.Show("String After Padding : " + inputString, "Result");
-        }
-    }
-}
-
+   private void button3_Click(object sender, EventArgs e)<br>
+        {<br>
+            string inputString;<br>
+            inputString = txtInput.Text;<br>
+            inputString = inputString.PadLeft(10, '*');<br>
+            inputString = inputString.PadRight(15, '*');<br>
+            MessageBox.Show("String After Padding : " + inputString, "Result");<br>
+        }<br>
+    }<br>
+}<br>
+<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/157820042-fad259a0-c217-4985-8061-ed9917f82b83.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/157820255-85ec84ed-f8a2-4ce9-939f-e364e778ad3c.png)<br>
