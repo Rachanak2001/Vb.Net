@@ -184,6 +184,7 @@ namespace ex7<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154626694-c7dd0f27-98a1-49b7-a5b0-21f4c798d34a.png)
 
+
 **4 C# Program to create Gray code.**<br>
 using System;<br>
 namespace ex5<br>
@@ -206,6 +207,7 @@ namespace ex5<br>
     }<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154627708-35d4a651-5ff5-41bb-b926-12551da4043b.png)
+
 
   **5 C# Program to calculate volume of 2 boxes and find the resultant volume after addition of 2 boxes by implementing operator overloading.** <br>
   using System;<br>
@@ -250,6 +252,7 @@ namespace ex6<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154629037-e5ce95da-8ea2-43b8-8adb-a954ce89e3c8.png)
 
+
 **6 C# Program to implement principles of Delegate converting input string to uppercase first,last and entire string**<br>
 using System;<br>
 namespace ex8<br>
@@ -290,6 +293,7 @@ namespace ex8<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154629823-19042002-29d9-48e0-b7b6-25d620c9ef5a.png)
 
+
 **7 C# program to generate Rigister number automatically for 100 student using static Constructor**<br>
 using System;<br>
 namespace ex9<br>
@@ -320,6 +324,7 @@ namespace ex9<br>
 ![image](https://user-images.githubusercontent.com/97940850/154630837-497cda04-9cc8-475c-806f-66163dcc091b.png)
 ![image](https://user-images.githubusercontent.com/97940850/154631120-f7e8f60d-bd41-4964-a573-558c35734e4a.png)
 
+
 **8 C# Program to find the frequency of the word "is" in a given sentence**<br>
 using System;<br>
 namespace ex10<br>
@@ -349,6 +354,7 @@ namespace ex10<br>
 }<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154631764-8376067d-b911-4d81-9600-94c94ab3baee.png)
+
 
 **9 C# program to benchmark 2D,Jagged array allocation**<br>
 using System;<br>
@@ -402,6 +408,8 @@ namespace ex11<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154632673-45f0f879-5bfd-47fe-9723-0f9075cb4543.png)
 
+
+
 **10 C# program to find the sum of the values in diagonal of the matrix**<br>
 
  using System;<br>
@@ -444,6 +452,8 @@ Console.WriteLine();<br>
 }<br>
 
 ![image](https://user-images.githubusercontent.com/97940850/154633617-d4c0cfbd-1716-4701-a7c4-dcb4baffae82.png)<br>
+
+
 
 **11. C# Program to Create a file check the existence of a file and read the content of the file**<br>
 using System;<br>
@@ -572,6 +582,8 @@ namespace ex14<br>
 ![image](https://user-images.githubusercontent.com/97940850/154634783-c273d4c6-77eb-4198-8251-b2f70cf8fee4.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/154634965-84d7a2e7-dc2a-4348-877c-90cb2e225948.png)<br>
 
+
+
 **13. C# program to Implement IComparable interface.**<br>
 using System;<br>
 namespace ex17<br>
@@ -633,6 +645,8 @@ namespace ex17<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154637579-23b8dacf-5de8-4679-a073-abcda81202d8.png)<br>
 
+
+
 **14 c# program to create thread pools.**<br>
 using System;<br>
 using System.Threading;<br>
@@ -675,6 +689,8 @@ namespace ex18<br>
 }<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154637919-1c05db93-56bd-4188-9f6e-741e0ad7d1fe.png)<br>
+
+
 
 **15. C# program to demostrate error handling using try,catch and finally block**<br>
 using System;<br>
@@ -726,6 +742,7 @@ public class Age<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/154638151-631c25eb-770d-43a1-bfd8-12dbd098c717.png)<br>
 
+
 **16. C# program to generate fibonacci series.**<br>
 using System;<br>
 public class FibonacciExample<br>
@@ -747,6 +764,7 @@ public class FibonacciExample<br>
 }<br>
 **OUTPUT**<br>
 ![image](https://user-images.githubusercontent.com/97940850/155657785-2bc1b9c6-fa2f-4a34-a419-24409d61e134.png)<br>
+
 
 **17. C# program to generate prime numbers.**<br>
 using System;<br>
@@ -775,6 +793,7 @@ public class PrimeNumberExample<br>
 ![image](https://user-images.githubusercontent.com/97940850/155659035-ddb1e636-c75d-4c7c-a1e1-48c66c86b52c.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/155658911-39bd075e-c7c0-4ac3-90d9-c9e030400fdb.png)<br>
 
+
 **18. C# program to check a palindrom number or not**<br>
 using System;<br>
 public class PalindromeExample<br>
@@ -801,6 +820,7 @@ public class PalindromeExample<br>
 ![image](https://user-images.githubusercontent.com/97940850/155659869-5b1b78c0-af9f-4d3c-8270-008043e7a190.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/155659980-ff53ed9c-1dee-4251-8ce5-5406a54a51b7.png)<br>
 
+
 **19. c# program to find a factorial of a number.**<br>
 using System;  <br>
   public class FactorialExample  <br>
@@ -818,6 +838,7 @@ using System;  <br>
   } <br>
   **OUTPUT**<br>
   ![image](https://user-images.githubusercontent.com/97940850/155661285-d1078b59-4ce7-42fb-925b-0f284606b844.png)<br>
+
 
 **20. C# Program to check a armstrong number or not.**<br>
 using System;  <br>
@@ -840,6 +861,7 @@ using System;  <br>
   **OUTPUT**<br>
   ![image](https://user-images.githubusercontent.com/97940850/155662154-6136ac80-78ef-4962-8917-0268bc7d6fd9.png)<br>
 
+
 **21. C# Program to Reverse a number.**<br>
 using System;  <br>
   public class ReverseExample <br> 
@@ -861,6 +883,7 @@ using System;  <br>
   **OUTPUT**<br>
   ![image](https://user-images.githubusercontent.com/97940850/155662699-37d7f14f-efa6-4318-ba57-3e2aafc164ef.png)<br>
   
+  
   **22. C# Program to swap two numbers without using third variable.**<br>
   using System;  <br>
   public class SwapExample  <br>
@@ -877,6 +900,8 @@ using System;  <br>
   }   <br>
   **OUTPUT**<br>
   ![image](https://user-images.githubusercontent.com/97940850/155663724-69ed18af-3ba3-424b-8729-741740489632.png)<br>
+
+
 
 **WINDOW APPLICATION**<br>
 **23. C# Program to Convert Digit to Word.**<br>
@@ -964,6 +989,7 @@ namespace EX2<br>
 ![image](https://user-images.githubusercontent.com/97940850/157811585-b1d9cdcd-2205-478d-8e55-68d194fb60e8.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/157811701-fd70946c-b319-4a1c-afaf-51d38b0a5d14.png)<br>
 
+
 **25.C# Program to Perform Reversal, Padding and Trimming Operations on String.**<br>
 using System;<br>
 using System.Collections.Generic;<br>
@@ -1021,6 +1047,7 @@ namespace Ex4<br>
 ![image](https://user-images.githubusercontent.com/97940850/157820255-85ec84ed-f8a2-4ce9-939f-e364e778ad3c.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/157820391-2179174d-8bf5-40fa-b2b9-77a415f3ef50.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/157820500-e232d52a-8749-4a9d-ae04-f793c46ab17b.png)<br>
+
 
 **26. C# program to create a progress Bar Control.**<br>
 using System;<br>
