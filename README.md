@@ -1096,3 +1096,46 @@ namespace Ex5<br>
 ![image](https://user-images.githubusercontent.com/97940850/158744516-374f7b05-839f-4522-b80c-4ff1354355db.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/158744620-edb24f3e-44c6-4ce7-8dfe-5f165d0261fb.png)<br>
 
+**27.Create a winform application to create a flat clock.**<br>
+using System;<br>
+using System.Collections.Generic;<br>
+using System.ComponentModel;<br>
+using System.Data;<br>
+using System.Drawing;<br>
+using System.Linq;<br>
+using System.Text;<br>
+using System.Threading.Tasks;<br>
+using System.Windows.Forms;<br>
+<br>
+namespace Ex6<br>
+{<br>
+    public partial class Form1 : Form
+    {<br>
+        public Form1()<br>
+        {<br>
+            InitializeComponent();<br>
+            timer1.Start();<br>
+        }<br>
+<br>
+   private void Form1_Load(object sender, EventArgs e)<br>
+        {<br>
+            System.Timers.Timer timer = new System.Timers.Timer();<br>
+            timer.Interval = 1000;//1s<br>
+            timer.Elapsed += Timer_Elapsed;<br>
+            timer.Start();<br>
+<br>
+        }<br>
+
+   private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)<br>
+        {<br>
+            circularProgressBar1.Invoke((MethodInvoker)delegate<br>
+            {<br>
+                circularProgressBar1.Text = DateTime.Now.ToString("hh:mm:ss");<br>
+                circularProgressBar1.SubscriptText = DateTime.Now.ToString("tt");//AM or PM<br>
+            });<br>
+        }<br>
+    }<br>
+}<br>
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/158756208-93c72317-fa9d-4067-9d01-5fd5fd85d6ad.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/158756416-fd1230af-c26c-4bd5-b88b-2e3f801203ba.png)<br>
