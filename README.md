@@ -879,7 +879,7 @@ using System;  <br>
   ![image](https://user-images.githubusercontent.com/97940850/155663724-69ed18af-3ba3-424b-8729-741740489632.png)<br>
 
 **WINDOW APPLICATION**<br>
-**22. C# Program to Convert Digit to Word.**<br>
+**23. C# Program to Convert Digit to Word.**<br>
 using System;<br>
 using System.Collections.Generic;<br>
 using System.ComponentModel;<br>
@@ -964,7 +964,7 @@ namespace EX2<br>
 ![image](https://user-images.githubusercontent.com/97940850/157811585-b1d9cdcd-2205-478d-8e55-68d194fb60e8.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/157811701-fd70946c-b319-4a1c-afaf-51d38b0a5d14.png)<br>
 
-**22.C# Program to Perform Reversal, Padding and Trimming Operations on String.**<br>
+**25.C# Program to Perform Reversal, Padding and Trimming Operations on String.**<br>
 using System;<br>
 using System.Collections.Generic;<br>
 using System.ComponentModel;<br>
@@ -1022,5 +1022,50 @@ namespace Ex4<br>
 ![image](https://user-images.githubusercontent.com/97940850/157820391-2179174d-8bf5-40fa-b2b9-77a415f3ef50.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/157820500-e232d52a-8749-4a9d-ae04-f793c46ab17b.png)<br>
 
+**26. C# program to create a progress Bar Control.**<br>
+using System;<br>
+using System.Collections.Generic;<br>
+using System.ComponentModel;<br>
+using System.Data;<br>
+using System.Drawing;<br>
+using System.Linq;<br>
+using System.Text;<br>
+using System.Threading;<br>
+using System.Windows.Forms;<br>
 
+namespace Ex5<br>
+{<br>
+    public partial class Form1 : Form<br>
+    {<br>
+        public Form1()<br>
+        {<br>
+            InitializeComponent();<br>
+        }<br>
+        
+   private void Form1_Load(object sender, EventArgs e)<br>
+        {<br>
+            backgroundWorker1.WorkerReportsProgress = true;<br>
+            backgroundWorker1.RunWorkerAsync();<br>
+        }<br>
+
+   private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)<br>
+        {<br>
+            for(int i=1;i<=100;i++)<br>
+            {<br>
+                Thread.Sleep(50);<br>
+                backgroundWorker1.ReportProgress(i);<br>
+            }<br>
+        }<br>
+
+   private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)<br>
+        {<br>
+            progressBar1.Value = e.ProgressPercentage;<br>
+            this.Text = "Progress: " + e.ProgressPercentage.ToString() + "%";<br>
+        }<br>
+    }<br>
+}<br>
+
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/158744516-374f7b05-839f-4522-b80c-4ff1354355db.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/158744620-edb24f3e-44c6-4ce7-8dfe-5f165d0261fb.png)<br>
 
