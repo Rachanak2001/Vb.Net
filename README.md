@@ -1140,121 +1140,232 @@ namespace Ex6<br>
 ![image](https://user-images.githubusercontent.com/97940850/158756208-93c72317-fa9d-4067-9d01-5fd5fd85d6ad.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/158756416-fd1230af-c26c-4bd5-b88b-2e3f801203ba.png)<br>
 
-**28. **
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+**28. C# Program to perform a number guessing game**<br>
+using System;<br>
+using System.Collections.Generic;<br>
+using System.ComponentModel;<br>
+using System.Data;<br>
+using System.Drawing;<br>
+using System.Linq;<br>
+using System.Text;<br>
+using System.Threading.Tasks;<br>
+using System.Windows.Forms;<br>
 
-namespace Ex7
-{
-    public partial class Form1 : Form
-    {
-        // Intialising component 
-        static Random r = new Random();
-        int value;
-        int guessnum;
-        int win = 10;
-        int guess = 1;
-        Button button1;
-        TextBox textBox1;
-        RichTextBox richTextBox1;
-        RichTextBox richTextBox2;
-        Label label4;
-    public Form1()
-        {
-            InitializeComponent();
+namespace Ex7<br>
+{<br>
+    public partial class Form1 : Form<br>
+    {<br>
+        // Intialising component <br>
+        static Random r = new Random();<br>
+        int value;<br>
+        int guessnum;<br>
+        int win = 10;<br>
+        int guess = 1;<br>
+        Button button1;<br>
+        TextBox textBox1;<br>
+        RichTextBox richTextBox1;<br>
+        RichTextBox richTextBox2;<br>
+        Label label4;<br>
+    public Form1()<br>
+        {<br>
+            InitializeComponent();<br>
+            {<br>
+                value = r.Next(100);<br>
+                this.Controls.Clear();<br>
+                this.BackColor = Color.SkyBlue;<br>
+                this.AutoSize = true;<br>
+                this.Padding = new Padding(16);<br>
+                Label label = new Label();<br>
+                label.Text = "Pick a number between 1 and 100";<br>
+                label.Bounds = new Rectangle(10, 20, 340, 40);<br>
+                label.Font = new Font("Arial", 16);<br>
+                textBox1 = new TextBox();<br>
+                textBox1.Bounds = new Rectangle(20, 50, 120, 80);<br>
+                textBox1.Font = new Font("Arial", 24);<br>
+    button1 = new Button();<br>
+                button1.Text = " Check Your Guess ";<br>
+                button1.Bounds = new Rectangle(160, 50, 120, 40);<br>
+
+   button1.BackColor = Color.LightGray;<br>
+                button1.Click += new EventHandler(button1_Click);<br>
+                Label label2 = new Label();<br>
+                label2.Text = "Low Guess";<br>
+                label2.Bounds = new Rectangle(20, 150, 160, 40);<br>
+                label2.Font = new Font("Arial", 18);<br>
+                richTextBox1 = new RichTextBox();<br>
+                richTextBox1.Bounds = new Rectangle(20, 190, 160, 300);<br>
+                richTextBox1.Font = new Font("Arial", 16);<br>
+
+   Label label3 = new Label();<br>
+                label3.Text = "High Guess";<br>
+                label3.Bounds = new Rectangle(180, 150, 160, 40);<br>
+                label3.Font = new Font("Arial", 18);<br>
+                richTextBox2 = new RichTextBox();<br>
+                richTextBox2.Bounds = new Rectangle(180, 190, 160, 300);<br>
+                richTextBox2.Font = new Font("Arial", 16);<br>
+                label4 = new Label();<br>
+                label4.Bounds = new Rectangle(20, 100, 700, 40);<br>
+                label4.Font = new Font("Arial", 16);<br>
+                this.Controls.Add(label);<br>
+                this.Controls.Add(textBox1);<br>
+                this.Controls.Add(button1);<br>
+                this.Controls.Add(label4);<br>
+                this.Controls.Add(label2);<br>
+                this.Controls.Add(label3);<br>
+                this.Controls.Add(richTextBox1);<br>
+                this.Controls.Add(richTextBox2);<br>
+            }<br>
+        }<br>
+        private void button1_Click(object sender, EventArgs e)<br>
+        {<br>
+            // Coding of game <br>
+            if (textBox1.Text == "")<br>
+            {<br>
+                return;<br>
+            }<br>
+            guessnum = Convert.ToInt32(textBox1.Text);<br>
+            textBox1.Text = String.Empty;<br>
+            if (win >= 0)<br>
+            { <br>
+            if (guessnum == value)<br>
+                {<br>
+                    MessageBox.Show("You have guessed the number! \n The number was:  " + value);<br>
+                    InitializeComponent();<br>
+                }<br>
+                else if (guessnum < value)<br>
+                {<br>
+                    richTextBox1.Text += guessnum + "\n";<br>
+                    label4.Text = "wrong Guess and number \n of guesses left are " + (10 - guess);<br>
+                }<br>
+                else if (guessnum > value)<br>
+                {<br>
+                    richTextBox2.Text += guessnum + "\n";<br>
+                    label4.Text = "wrong Guess and number \n  of guesses left are " + (10 - guess);<br>
+                }<br>
+                guess++;<br>
+                win--;<br>
+            }<br>
+            if (guess == 11)<br>
+            {<br>
+                label4.Text = "You loose,Correct Guess is " + value;<br>
+            }<br>
+        }<br>
+        private void Form1_Load(object sender, EventArgs e)<br>
+        {<br>
+
+   }<br>
+  }<br>
+}<br>
+
+**OUTPUT***<br>
+
+
+
+**29.C# program to develop an application to create a notepad.**<br>
+using System;<br>
+using System.Collections.Generic;<br>
+using System.ComponentModel;<br>
+using System.Data;<br>
+using System.Drawing;<br>
+using System.Linq;<br>
+using System.Text;<br>
+using System.Threading.Tasks;<br>
+using System.Windows.Forms;<br>
+
+namespace Notepad<br>
+{<br>
+    public partial class Form1 : Form<br>
+    {<br>
+        private void Form1_Load(object sender, EventArgs e)<br>
+        {<br>
+        }<br>
+        private string fileName;<br>
+        private RichTextBox txtContent;<br>
+        private ToolBar toolBar;<br>
+        internal Form1()<br>
+        {<br>
+            fileName = null;<br>
+            initializeComponents();<br>
+        }<br>
+
+   void initializeComponents()<br>
+        {<br>
+            this.Text = "My notepad";<br>
+            this.MinimumSize = new Size(600, 450);<br>
+            this.FormClosing += new FormClosingEventHandler(NotepadClosing);<br>
+            this.MaximizeBox = true;<br>
+            toolBar = new ToolBar();<br>
+            toolBar.Font = new Font("Arial", 16);<br>
+            toolBar.Padding = new Padding(4);<br>
+            toolBar.ButtonClick += new ToolBarButtonClickEventHandler(toolBarClicked);<br>
+            ToolBarButton toolBarButton1 = new ToolBarButton();<br>
+            ToolBarButton toolBarButton2 = new ToolBarButton();<br>
+            ToolBarButton toolBarButton3 = new ToolBarButton();<br>
+            toolBarButton1.Text = "New";<br>
+            toolBarButton2.Text = "Open";<br>
+            toolBarButton3.Text = "Save";<br>
+            toolBar.Buttons.Add(toolBarButton1);<br>
+            toolBar.Buttons.Add(toolBarButton2);<br>
+            toolBar.Buttons.Add(toolBarButton3);<br>
+            txtContent = new RichTextBox();<br>
+            txtContent.Size = this.ClientSize;<br>
+            txtContent.Height -= toolBar.Height;<br>
+            txtContent.Top = toolBar.Height;<br>
+            txtContent.Anchor = AnchorStyles.Left | AnchorStyles.Right |<br>
+           AnchorStyles.Top | AnchorStyles.Bottom;<br>
+            txtContent.Font = new Font("Arial", 16);<br>
+            txtContent.AcceptsTab = true;<br>
+            txtContent.Padding = new Padding(8);<br>
+            this.Controls.Add(toolBar);<br>
+            this.Controls.Add(txtContent);<br>
+        }<br>
+        private void toolBarClicked(Object sender, ToolBarButtonClickEventArgs e)<br>
+        {<br>
+    saveFile();<br>
+            switch (toolBar.Buttons.IndexOf(e.Button))<br>
+            {<br>
+                case 0:<br>
+                    this.Text += "My notepad";<br>
+                    txtContent.Text = string.Empty;<br>
+                    fileName = null;<br>
+                    break;<br>
+                case 1:<br>
+   OpenFileDialog openDlg = new OpenFileDialog();<br>
+
+
+   if (DialogResult.OK == openDlg.ShowDialog())<br>
+                    {<br>
+                        fileName = openDlg.FileName;<br>
+                        txtContent.LoadFile(fileName);<br>
+                        this.Text = "My notepad " + fileName;<br>
+                    }     break;<br>
+            }<br>
+        }<br>
+        void saveFile()<br>
+        {<br>
+    if (fileName == null)<br>
             {
-                value = r.Next(100);
-                this.Controls.Clear();
-                this.BackColor = Color.SkyBlue;
-                this.AutoSize = true;
-                this.Padding = new Padding(16);
-                Label label = new Label();
-                label.Text = "Pick a number between 1 and 100";
-                label.Bounds = new Rectangle(10, 20, 340, 40);
-                label.Font = new Font("Arial", 16);
-                textBox1 = new TextBox();
-                textBox1.Bounds = new Rectangle(20, 50, 120, 80);
-                textBox1.Font = new Font("Arial", 24);
-    button1 = new Button();
-                button1.Text = " Check Your Guess ";
-                button1.Bounds = new Rectangle(160, 50, 120, 40);
+                SaveFileDialog saveDlg = new SaveFileDialog();<br>
+                if (DialogResult.OK == saveDlg.ShowDialog())<br>
+                {<br>
+                    fileName = saveDlg.FileName;<br>
+                    this.Text += " " + fileName;<br>
+                }<br>
+            }<br>
+            else<br>
+            {<br>
+                txtContent.SaveFile(fileName, RichTextBoxStreamType.RichText);<br>
+            }<br>
+        }<br>
+        
+   private void NotepadClosing(Object sender, FormClosingEventArgs e)<br>
+        {<br>
+            saveFile();<br>
+        }<br>
+       }<br>
+    }<br>
 
-   button1.BackColor = Color.LightGray;
-                button1.Click += new EventHandler(button1_Click);
-                Label label2 = new Label();
-                label2.Text = "Low Guess";
-                label2.Bounds = new Rectangle(20, 150, 160, 40);
-                label2.Font = new Font("Arial", 18);
-                richTextBox1 = new RichTextBox();
-                richTextBox1.Bounds = new Rectangle(20, 190, 160, 300);
-                richTextBox1.Font = new Font("Arial", 16);
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/160996633-68b7f69e-35e4-48a0-b605-299df4ff69a7.png)<br>
 
-   Label label3 = new Label();
-                label3.Text = "High Guess";
-                label3.Bounds = new Rectangle(180, 150, 160, 40);
-                label3.Font = new Font("Arial", 18);
-                richTextBox2 = new RichTextBox();
-                richTextBox2.Bounds = new Rectangle(180, 190, 160, 300);
-                richTextBox2.Font = new Font("Arial", 16);
-                label4 = new Label();
-                label4.Bounds = new Rectangle(20, 100, 700, 40);
-                label4.Font = new Font("Arial", 16);
-                this.Controls.Add(label);
-                this.Controls.Add(textBox1);
-                this.Controls.Add(button1);
-                this.Controls.Add(label4);
-                this.Controls.Add(label2);
-                this.Controls.Add(label3);
-                this.Controls.Add(richTextBox1);
-                this.Controls.Add(richTextBox2);
-            }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Coding of game 
-            if (textBox1.Text == "")
-            {
-                return;
-            }
-            guessnum = Convert.ToInt32(textBox1.Text);
-            textBox1.Text = String.Empty;
-            if (win >= 0)
-            { 
-            if (guessnum == value)
-                {
-                    MessageBox.Show("You have guessed the number! \n The number was:  " + value);
-                    InitializeComponent();
-                }
-                else if (guessnum < value)
-                {
-                    richTextBox1.Text += guessnum + "\n";
-                    label4.Text = "wrong Guess and number \n of guesses left are " + (10 - guess);
-                }
-                else if (guessnum > value)
-                {
-                    richTextBox2.Text += guessnum + "\n";
-                    label4.Text = "wrong Guess and number \n  of guesses left are " + (10 - guess);
-                }
-                guess++;
-                win--;
-            }
-            if (guess == 11)
-            {
-                label4.Text = "You loose,Correct Guess is " + value;
-            }
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-   }
-  }
-}
-
-**OUTPUT***
+        
