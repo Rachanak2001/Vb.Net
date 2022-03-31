@@ -1258,6 +1258,9 @@ namespace Ex7<br>
 }<br>
 
 **OUTPUT***<br>
+![image](https://user-images.githubusercontent.com/97940850/160999223-fc15c585-ee5c-42f3-8c90-f38818e6ef44.png)
+![image](https://user-images.githubusercontent.com/97940850/160998196-821312f4-51d2-4aad-bd5f-e015a0028272.png)
+![image](https://user-images.githubusercontent.com/97940850/160998804-0a59440e-bba5-4981-bd0e-cc1c397d0bf5.png)
 
 
 
