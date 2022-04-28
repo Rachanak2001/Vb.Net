@@ -989,6 +989,74 @@ namespace EX2<br>
 ![image](https://user-images.githubusercontent.com/97940850/157811585-b1d9cdcd-2205-478d-8e55-68d194fb60e8.png)<br>
 ![image](https://user-images.githubusercontent.com/97940850/157811701-fd70946c-b319-4a1c-afaf-51d38b0a5d14.png)<br>
 
+**24.Write a c# program to perform money conversion.**<br>
+using System;<br>
+using System.Collections.Generic;<br>
+using System.ComponentModel;<br>
+using System.Data;<br>
+using System.Drawing;<br>
+using System.Linq;<br>
+using System.Text;<br>
+using System.Threading.Tasks;<br>
+using System.Windows.Forms;<br>
+<br>
+namespace money<br>
+{<br>
+    public partial class Form1 : Form<br>
+    {<br>
+        public Form1()<br>
+        {<br>
+            InitializeComponent();<br>
+        }<br>
+<br>
+   private void button1_Click(object sender, EventArgs e)<br>
+        {<br>
+            {<br>
+                label4.Visible = true;<br>
+                if (textBox1.Text == "")<br>
+                {<br>
+                    label4.Text = "Enter the amount";<br>
+                }<br>
+                else<br>
+                {<br>
+                    Double convertedamt = Convert.ToDouble(textBox1.Text);<br>
+<br>
+   if (comboBox1.SelectedItem == "INR" && comboBox2.SelectedItem == "USD")<br>
+                    {<br>
+                        Double a = convertedamt / 74;<br>
+                        label4.Text = a + "$";<br>
+                    }<br>
+<br>
+   else if (comboBox1.SelectedItem == "INR" && comboBox2.SelectedItem ==  "SAR")<br>
+                    {<br>
+                        Double a = convertedamt / 17;<br>
+                        label4.Text = a + "SAR";<br>
+                    }<br>
+<br>
+   else if (comboBox1.SelectedItem == "INR" && comboBox2.SelectedItem == "EUR")<br>
+                    {<br>
+                        Double a = convertedamt / 11;<br>
+                        label4.Text = a + "EUR";<br>
+                    }<br>
+                    else<br>
+                    {<br>
+                       label4.Text = "Please Enter the conversion code";<br>
+                    }<br>
+                }<br>
+            }<br>
+         }<br>
+<br>
+   private void button2_Click(object sender, EventArgs e)<br>
+        {<br>
+            textBox1.Text = "";<br>
+            label4.Text = "";<br>
+        }<br>
+    }<br>
+}<br>
+
+**OUTPUT**<br>
+![image](https://user-images.githubusercontent.com/97940850/165695780-3f60aebd-5c4d-40cc-afd9-19cbd24b70d3.png)<br>
+![image](https://user-images.githubusercontent.com/97940850/165695992-c09f39dd-70ee-4a2b-9eae-4357c8fe1678.png)<br>
 
 **25.C# Program to Perform Reversal, Padding and Trimming Operations on String.**<br>
 using System;<br>
